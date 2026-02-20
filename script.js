@@ -20,7 +20,7 @@ function confetti() {
     if(currently_confettiing === false) {
         currently_confettiing = true;
         for(let i = 0; i<401; i++) {
-            confettis.push(confetti_object(0, 0, 10, 20, (colors[length(colors) % i]), Math.floor(Math.random() * max_xchange) - 10, Math.floor(Math.random() * max_ychange) - 10));
+            confettis.push(confetti_object(0, 0, 10, 20, (colors[colors.length % i]), Math.floor(Math.random() * max_xchange) - 10, Math.floor(Math.random() * max_ychange) - 10));
         }
         while(confettis.length > 0) {
             let c = 0
