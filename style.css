@@ -1,16 +1,17 @@
 #iteration1 {
-    h1 {
-        font-size: 50px;
-    };
     img {
         width: 100px;
         height: auto;
     }
 }
-#about {
-    h3 {
-        font-size: 20px;
-    }
+h1 {
+    font-size: 50px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 20px;
 }
 p {
     font-size: 15px;
