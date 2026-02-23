@@ -8,14 +8,10 @@
     background-color: cornflowerblue;
 }
 .iteration3 {
-    p {
-        background-color: cornflowerblue;
-    }
+    background-color: cornflowerblue;
 }
 .iteration4 {
-    p {
-        background-color: cornflowerblue;
-    }
+    background-color: cornflowerblue;
 }
 .iteration5 {
     background-color: cornflowerblue;
@@ -27,10 +23,6 @@
         th {
             background-color: lightgray;
         }
-    }
-    .tabledata {
-        background-color: gray;
-        border: 3px solid black;
     }
 }
 h1 {
