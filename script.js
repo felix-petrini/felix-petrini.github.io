@@ -18,6 +18,7 @@ let confettis = [];
 let currently_confettiing = false;
 function confetti() {
     if(currently_confettiing === false) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         currently_confettiing = true;
         for(let i = 0; i < 100; i++) {
             confettis.push(new confetti_object(200, 200, 10, 10, colors[i % colors.length], Math.random() * 10 - 5, Math.random() * -10));
@@ -27,7 +28,7 @@ function confetti() {
 }
 
 function update() {
-    ctx.clearRect(0, 0, 400, 400);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = confettis.length - 1; i >= 0; i--) {
         let obj = confettis[i];
         obj.x += obj.xchange;
@@ -48,4 +49,4 @@ function update() {
         currently_confettiing = false;
     }
 }
-canvas.addEventListener("clickity", confetti())
+canvas.addEventListener("clickconfetti", confetti())
