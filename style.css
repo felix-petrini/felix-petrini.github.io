@@ -17,11 +17,14 @@
     background-color: cornflowerblue;
     table {
         border: 2px solid black;
+        background-color: white;
         td {
             background-color: gray;
+            border: 1px solid black;
         }
         th {
             background-color: lightgray;
+            border: 1px solid black;
         }
     }
 }
