@@ -48,3 +48,4 @@ function update() {
         currently_confettiing = false;
     }
 }
+canvas.addEventListener("confetticlick", confetti)
