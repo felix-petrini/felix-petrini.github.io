@@ -47,4 +47,4 @@ function update() {
         currently_confettiing = false;
     }
 }
-canvas.addEventListener("clickity", confetti)
+canvas.addEventListener("clickity", confetti())
