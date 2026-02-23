@@ -49,4 +49,3 @@ function update() {
         currently_confettiing = false;
     }
 }
-canvas.addEventListener("clickconfetti", confetti())
