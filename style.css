@@ -32,29 +32,6 @@
         }
     }
 }
-.iteration3 {
-    p {
-        background-color: cornflowerblue;
-    }
-}
-.iteration4 {
-    p {
-        background-color: cornflowerblue;
-    }
-}
-.iteration5 {
-    p {
-        background-color: cornflowerblue;
-    }
-    table {
-        .tableheaders {
-            background-color: lightgrey;
-        }
-        .tabledata {
-            background-color: gray;
-        }
-    }
-}
 h1 {
     font-size: 50px;
 }
