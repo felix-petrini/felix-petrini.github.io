@@ -33,7 +33,7 @@ function update() {
         let obj = confettis[i];
         obj.x += obj.xchange;
         obj.y += obj.ychange;
-        obj.ychange += 0.5;
+        obj.ychange += 0.25;
 
         ctx.fillStyle = obj.color;
         ctx.fillRect(obj.x, obj.y, obj.width, obj.height);
