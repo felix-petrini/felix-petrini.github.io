@@ -27,7 +27,6 @@ function confetti() {
 }
 
 function update() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = confettis.length - 1; i >= 0; i--) {
         let obj = confettis[i];
         obj.x += obj.xchange;
