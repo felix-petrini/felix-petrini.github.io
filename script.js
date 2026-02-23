@@ -1,4 +1,3 @@
-console.log("loaded script");
 const canvas = document.getElementById("it4button");
 const ctx = canvas.getContext("2d");
 class confetti_object {
@@ -18,7 +17,6 @@ const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
 let confettis = [];
 let currently_confettiing = false;
 function confetti() {
-    console.log("confetti called");
     if(currently_confettiing === false) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         currently_confettiing = true;
