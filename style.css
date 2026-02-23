@@ -21,15 +21,13 @@
     p {
         background-color: cornflowerblue;
     }
-    table {
-        .tableheaders {
-            background-color: lightgrey;
-            border: 3px solid black;
-        }
-        .tabledata {
-            background-color: gray;
-            border: 3px solid black;
-        }
+    .tableheaders {
+        background-color: lightgrey;
+        border: 3px solid black;
+    }
+    .tabledata {
+        background-color: gray;
+        border: 3px solid black;
     }
 }
 h1 {
