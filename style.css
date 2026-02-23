@@ -24,6 +24,31 @@
     table {
         .tableheaders {
             background-color: lightgrey;
+            border: 3px solid black;
+        }
+        .tabledata {
+            background-color: gray;
+            border: 3px solid black;
+        }
+    }
+}
+.iteration3 {
+    p {
+        background-color: cornflowerblue;
+    }
+}
+.iteration4 {
+    p {
+        background-color: cornflowerblue;
+    }
+}
+.iteration5 {
+    p {
+        background-color: cornflowerblue;
+    }
+    table {
+        .tableheaders {
+            background-color: lightgrey;
         }
         .tabledata {
             background-color: gray;
