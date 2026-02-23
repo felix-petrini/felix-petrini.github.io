@@ -26,7 +26,6 @@ function confetti() {
         update();
     }
 }
-
 function update() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = confettis.length - 1; i >= 0; i--) {
@@ -34,15 +33,12 @@ function update() {
         obj.x += obj.xchange;
         obj.y += obj.ychange;
         obj.ychange += 0.25;
-
         ctx.fillStyle = obj.color;
         ctx.fillRect(obj.x, obj.y, obj.width, obj.height);
-
         if(obj.y > 400 || obj.x < 0 || obj.x > 400) {
             confettis.splice(i, 1);
         }
     }
-
     if (confettis.length > 0) {
         requestAnimationFrame(update);
     } else {
