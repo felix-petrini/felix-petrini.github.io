@@ -11,10 +11,9 @@
     background-color: cornflowerblue;
 }
 .iteration4 {
-    h2 {
+    h2, p {
         background-color: cornflowerblue;
     }
-    background-color: cornflowerblue;
 }
 .iteration5 {
     background-color: cornflowerblue;
