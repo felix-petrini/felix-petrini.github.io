@@ -79,10 +79,12 @@ canvas2.addEventListener('click', function(event) {
                 score = score + score_change;
             }
             clicked = true;
+        } else {
+            clicked = false;
         }
     } else if (!shop && titlescreen) {
         if (mouse_pos.x > canvas2.width/2 - 50 && mouse_pos.x < canvas2.width/2 + 50 && mouse_pos.y > canvas2.height/2 + 50 && mouse_pos.y < canvas2.height/2 + 100) {
-            titlescreen=0;
+            titlescreen=false;
         }
     }
 })
