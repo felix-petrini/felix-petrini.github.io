@@ -56,7 +56,7 @@ let sps = 0;
 let score_x = 15;
 let score_y = 15;
 const button_img = new Image();
-button_img.src="./ClickerGame/button";
+button_img.src="./ClickerGame/button.png";
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
     if (!shop && !titlescreen) {
