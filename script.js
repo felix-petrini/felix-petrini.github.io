@@ -45,3 +45,44 @@ function update() {
         currently_confettiing = false;
     }
 }
+const canvas2=document.getElementById("it6canvas");
+const ctx2=canvas2.getContext("2d");
+let titlescreen=true;
+let shop=false;
+let clicked=false;
+let score = 0;
+let score_change = 1;
+let sps = 0;
+let score_x = 15;
+let score_y = 15;
+const button_img = new Image();
+button_img.src="./ClickerGame/button";
+function update2() {
+    ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
+    if (!shop && !titlescreen) {
+        ctx2.fillText(score.toString(), score_x, score_y);
+        if (clicked) {
+            ctx2.drawImage(button_img, 0, 178.8, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
+        } else {
+            ctx2.drawImage(button_img, 0, 0, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
+        }
+    } else if (!shop && titlescreen) {
+        ctx2.fillText("Title", canvas2.width/2-50, canvas2.height/2-100);
+        ctx2.fillRect(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
+    }
+}
+canvas2.addEventListener('click', function(event) {
+    let mouse_pos = getMousePosition(canvas2, event)
+    if (!shop && !titlescreen) {
+        if (mouse_pos.x < 449.4 && mouse_pos.x > 270.6 && mouse_pos.y > 250.6 && mouse_pos.y < 429.4) {
+            if (!clicked) {
+                score = score + score_change;
+            }
+            clicked = true;
+        }
+    } else if (!shop && titlescreen) {
+        if (mouse_pos.x > canvas2.width/2 - 50 && mouse_pos.x < canvas2.width/2 + 50 && mouse_pos.y > canvas2.height/2 + 50 && mouse_pos.y < canvas2.height/2 + 100) {
+            titlescreen=0;
+        }
+    }
+})
