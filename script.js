@@ -21,7 +21,7 @@ function confetti() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         currently_confettiing = true;
         for(let i = 0; i < 100; i++) {
-            confettis.push(new confetti_object(200, 200, 10, 10, colors[i % colors.length], Math.random() * 10 - 5, Math.random() * -10));
+            confettis.push(new confetti_object(200, 200, 10, 20, colors[i % colors.length], Math.random() * 10 - 5, Math.random() * -10));
         }
         update();
     }
