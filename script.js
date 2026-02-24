@@ -52,7 +52,6 @@ let shop=false;
 let clicked=false;
 let score = 0;
 let score_change = 1;
-let sps = 0;
 let score_x = 15;
 let score_y = 15;
 const button_img = new Image();
