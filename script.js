@@ -63,7 +63,7 @@ window.onload = function() {
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
     if (!shop && !titlescreen) {
-        ctx2.fillText(score.toString(), score_x + (15 * (score.length-1)), score_y);
+        ctx2.fillText(score.toString(), score_x + (30 * (score.length-1)), score_y);
         ctx2.strokeRect(canvas2.width - 225, 75, 150, 50);
         ctx2.fillText("Shop", canvas2.width - 150, 175);
         if (clicked) {
@@ -77,6 +77,8 @@ function update2() {
     } else if (shop) {
         ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
         ctx2.strokeRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
+        ctx2.strokeRect(canvas2.width - 225, 75, 150, 50);
+        ctx2.fillText("Back", canvas2.width - 150, 175);
     }
     requestAnimationFrame(update2);
 }
@@ -103,12 +105,21 @@ function canvas2click(event) {
             console.log("button");
             titlescreen=false;
         }
+    } else if (shop) {
+        if (mouse_x < (canvas2.width-75) && mouse_x > (canvas2.width-225) && mouse_y < 125 && mouse_y > 75) {
+            shop=false;
+        }
     }
 }
 canvas2.addEventListener('mousedown', function(event) {
     canvas2click(event);
 });
 canvas2.addEventListener('mouseup', function(event) {
+    let rect = canvas2.getBoundingClientRect();
+    const scaleX = canvas2.width / rect.width;
+    const scaleY = canvas2.height / rect.height;
+    let mouse_x = (event.clientX - rect.left) * scaleX;
+    let mouse_y = (event.clientY - rect.top) * scaleY;
     if (mouse_x > (canvas2.width-178.8)/2 && mouse_x < (canvas2.width+178.8)/2 && mouse_y > (canvas2.height-178.8)/2 && mouse_y < (canvas2.height+178.8)/2) {
         clicked=false;
     }
