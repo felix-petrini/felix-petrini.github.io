@@ -69,13 +69,11 @@ class RectButton {
         this.height=height;
     }
     isCollision(mousex, mousey) {
-        let realX = canvas2.width/2 + this.x;
-        let realY = canvas2.height/2 + this.y;
         if (
-            mousex < (realX+this.width) &&
-            mousex > (realX) &&
-            mousey < (realY+this.height) &&
-            mousey > (realY)
+            mousex < (this.x+this.width) &&
+            mousex > (this.x) &&
+            mousey < (this.y+this.height) &&
+            mousey > (this.y)
         ) {
             return true;
         } else {
@@ -83,15 +81,15 @@ class RectButton {
         }
     }
 }
-shopbutton = new RectButton(135, -190, 150, 50);
-clickbutton = new RectButton(-(178.8/2), -(178.8/2), 178.8, 178.8);
-shopbackbutton = new RectButton(135, -190, 150, 50);
-startbutton = new RectButton(-50, 50, 100, 50);
+shopbutton = new RectButton(canvas2.width/2+210, canvas2.height/2-265, 150, 50);
+clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
+shopbackbutton = new RectButton(canvas2.width/2+210, canvas2.height/2-265, 150, 50);
+startbutton = new RectButton(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     if (!shop && !titlescreen) {
         ctx2.fillText(score.toString(), score_x + (15 * (score.toString().length-1)), score_y);
-        ctx2.strokeRect(canvas2.width/2 + 135, canvas2.height/2 - 190, 150, 50);
+        ctx2.strokeRect(canvas2.width/2 + 210, canvas2.height/2 - 265, 150, 50);
         ctx2.fillText("Shop", canvas2.width - 150, 75);
         if (clicked) {
             ctx2.drawImage(button_img, 0, 178.8, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
