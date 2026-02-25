@@ -79,7 +79,7 @@ function update2() {
     requestAnimationFrame(update2);
 }
 function canvas2click(event) {
-    let mouse_pos = getMousePosition(canvas2, event);
+    let mouse_pos = (event.offsetX, event.offsetY);
     console.log(mouse_pos);
     if (!shop && !titlescreen) {
         if (mouse_pos.x < (canvas2.width+178.8)/2 && mouse_pos.x > (canvas2.width-178.8)/2 && mouse_pos.y > (canvas2.height-178.8)/2 && mouse_pos.y < (canvas2.height+178.8)/2) {
