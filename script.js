@@ -57,12 +57,6 @@ let score_x = 15;
 let score_y = 15;
 const button_img = new Image();
 button_img.src="./ClickerGame/button.png";
-class Mouse {
-    constructor(x, y) {
-        this.x=x;
-        this.y=y;
-    }
-}
 window.onload = function() {
     update2();
 }
@@ -88,6 +82,8 @@ function canvas2click(event) {
     let rect = canvas.getBoundingClientRect();
     let mouse_x = event.clientX - rect.left;
     let mouse_y = event.clientY - rect.top;
+    console.log(mouse_x);
+    console.log(mouse_y);
     if (!shop && !titlescreen) {
         if (mouse_x < (canvas2.width+178.8)/2 && mouse_x > (canvas2.width-178.8)/2 && mouse_y > (canvas2.height-178.8)/2 && mouse_y < (canvas2.height+178.8)/2) {
             if (!clicked) {
