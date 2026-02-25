@@ -69,8 +69,8 @@ class RectButton {
         this.height=height;
     }
     isCollision(mousex, mousey) {
-        let realX = canvas.width/2 + this.x;
-        let realY = canvas.height/2 + this.y;
+        let realX = canvas2.width/2 + this.x;
+        let realY = canvas2.height/2 + this.y;
         if (
             mousex < (realX+this.width) &&
             mousex > (realX) &&
@@ -83,9 +83,9 @@ class RectButton {
         }
     }
 }
-shopbutton = new RectButton(-225, 75, 150, 50);
+shopbutton = new RectButton(135, 75, -190, 50);
 clickbutton = new RectButton(-(178.8/2), -(178.8/2), 178.8, 178.8);
-shopbackbutton = new RectButton(-225, 75, 150, 50);
+shopbackbutton = new RectButton(135, 75, -190, 50);
 startbutton = new RectButton(-50, 50, 100, 50);
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
