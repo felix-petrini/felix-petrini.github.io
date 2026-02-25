@@ -80,8 +80,10 @@ function update2() {
 }
 function canvas2click(event) {
     let rect = canvas2.getBoundingClientRect();
-    let mouse_x = event.clientX - rect.left;
-    let mouse_y = event.clientY - rect.top;
+    const scaleX = canvas2.width / rect.width;
+    const scaleY = canvas2.height / rect.height;
+    let mouse_x = (event.clientX - rect.left) * scaleX;
+    let mouse_y = (event.clientY - rect.top) * scaleY;
     console.log(mouse_x);
     console.log(mouse_y);
     if (!shop && !titlescreen) {
