@@ -71,15 +71,15 @@ function update2() {
         }
     } else if (titlescreen) {
         ctx2.fillText("Title", canvas2.width/2-50, canvas2.height/2-100);
-        ctx2.fillRect(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
+        ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
     } else if (shop) {
-        ctx2.fillRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
-        ctx2.fillRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
+        ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
+        ctx2.strokeRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
     }
     requestAnimationFrame(update2);
 }
 function canvas2click(event) {
-    let rect = canvas.getBoundingClientRect();
+    let rect = canvas2.getBoundingClientRect();
     let mouse_x = event.clientX - rect.left;
     let mouse_y = event.clientY - rect.top;
     console.log(mouse_x);
