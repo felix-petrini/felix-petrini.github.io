@@ -53,8 +53,8 @@ let shop=false;
 let clicked=false;
 let score = 0;
 let score_change = 1;
-let score_x = 15;
-let score_y = 15;
+let score_x = 45;
+let score_y = 45;
 const button_img = new Image();
 button_img.src="./ClickerGame/button.png";
 window.onload = function() {
@@ -63,7 +63,7 @@ window.onload = function() {
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
     if (!shop && !titlescreen) {
-        ctx2.fillText(score.toString(), score_x, score_y);
+        ctx2.fillText(score.toString(), score_x + (15 * (score.length-1)), score_y);
         if (clicked) {
             ctx2.drawImage(button_img, 0, 178.8, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
         } else {
