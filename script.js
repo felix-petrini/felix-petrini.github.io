@@ -69,11 +69,13 @@ class RectButton {
         this.height=height;
     }
     isCollision(mousex, mousey) {
+        let realX = canvas.width/2 + this.x;
+        let realY = canvas.height/2 + this.y;
         if (
-            mousex < (canvas2.width+this.x+this.width) &&
-            mousex > (canvas2.width+this.x) &&
-            mousey < (canvas2.height+this.y+this.height) &&
-            mousey > (canvas2.height+this.y)
+            mousex < (canvas2.width+realX+this.width) &&
+            mousex > (canvas2.width+realX) &&
+            mousey < (canvas2.height+realY+this.height) &&
+            mousey > (canvas2.height+realY)
         ) {
             return true;
         } else {
@@ -90,7 +92,7 @@ function update2() {
     if (!shop && !titlescreen) {
         ctx2.fillText(score.toString(), score_x + (15 * (score.toString().length-1)), score_y);
         ctx2.strokeRect(canvas2.width - 225, 75, 150, 50);
-        ctx2.fillText("Shop", canvas2.width - 150, 175);
+        ctx2.fillText("Shop", canvas2.width - 150, 75);
         if (clicked) {
             ctx2.drawImage(button_img, 0, 178.8, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
         } else {
