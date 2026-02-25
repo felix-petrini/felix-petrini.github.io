@@ -78,7 +78,7 @@ function update2() {
     }
     requestAnimationFrame(update2);
 }
-canvas2.addEventListener('click', function(event) {
+function canvas2click(event) {
     let mouse_pos = getMousePosition(canvas2, event);
     console.log(mouse_pos);
     if (!shop && !titlescreen) {
@@ -96,4 +96,7 @@ canvas2.addEventListener('click', function(event) {
             titlescreen=false;
         }
     }
+}
+canvas2.addEventListener('click', function(event) {
+    canvas2click(event);
 });
