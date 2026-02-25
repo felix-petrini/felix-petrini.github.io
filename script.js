@@ -61,6 +61,30 @@ button_img.src="./ClickerGame/button.png";
 window.onload = function() {
     update2();
 }
+class RectButton {
+    constructor(x, y, width, height) {
+        this.x=x;
+        this.y=y;
+        this.width=width;
+        this.height=height;
+    }
+    isCollision(mousex, mousey) {
+        if (
+            mousex < (canvas2.width+this.x+this.width),
+            mousex > (canvas2.width+this.x),
+            mousey < (canvas2.height+this.y+this.height),
+            mousey > (canvas2.height+this.y)
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+shopbutton = new RectButton(-225, 75, 150, 50);
+clickbutton = new RectButton(-(178.8/2), -(178.8/2), 178.8, 178.8);
+shopbackbutton = new RectButton(-225, 75, 150, 50);
+startbutton = new RectButton(-50, 50, 100, 50);
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     if (!shop && !titlescreen) {
@@ -91,21 +115,22 @@ function canvas2click(event) {
     let mouse_x = (event.clientX - rect.left) * scaleX;
     let mouse_y = (event.clientY - rect.top) * scaleY;
     if (!shop && !titlescreen) {
-        if (mouse_x < (canvas2.width+178.8)/2 && mouse_x > (canvas2.width-178.8)/2 && mouse_y > (canvas2.height-178.8)/2 && mouse_y < (canvas2.height+178.8)/2) {
+        if (clickbutton.isCollision(mouse_x, mouse_y)) {
             if (!clicked) {
                 score = score + score_change;
+                clicked = true;
+                console.log("Mousedown button");
             }
-            clicked = true;
         }
-        if (mouse_x < (canvas2.width-75) && mouse_x > (canvas2.width-225) && mouse_y < 125 && mouse_y > 75) {
+        if (shopbutton.isCollision(mouse_x, mouse_y)) {
             shop=true;
         }
     } else if (titlescreen) {
-        if (mouse_x > canvas2.width/2 - 50 && mouse_x < canvas2.width/2 + 50 && mouse_y > canvas2.height/2 + 50 && mouse_y < canvas2.height/2 + 100) {
+        if (startbutton.isCollision(mouse_x, mouse_y)) {
             titlescreen=false;
         }
     } else if (shop) {
-        if (mouse_x < (canvas2.width-75) && mouse_x > (canvas2.width-225) && mouse_y < 125 && mouse_y > 75) {
+        if (shopbackbutton.isCollision(mouse_x, mouse_y)) {
             shop=false;
         }
     }
@@ -115,11 +140,12 @@ canvas2.addEventListener('mousedown', function(event) {
 });
 canvas2.addEventListener('mouseup', function(event) {
     let rect = canvas2.getBoundingClientRect();
-    const scaleX = canvas2.width / rect.width;
-    const scaleY = canvas2.height / rect.height;
-    let mouse_x = (event.clientX - rect.left) * scaleX;
-    let mouse_y = (event.clientY - rect.top) * scaleY;
-    if (mouse_x > (canvas2.width-178.8)/2 && mouse_x < (canvas2.width+178.8)/2 && mouse_y > (canvas2.height-178.8)/2 && mouse_y < (canvas2.height+178.8)/2) {
+    const scaleX2 = canvas2.width / rect.width;
+    const scaleY2 = canvas2.height / rect.height;
+    let mouse_x2 = (event.clientX - rect.left) * scaleX2;
+    let mouse_y2 = (event.clientY - rect.top) * scaleY2;
+    if (clickbutton.isCollision(mouse_x2, mouse_y2)) {
+        console.log("Mouseup button");
         clicked=false;
     }
 });
