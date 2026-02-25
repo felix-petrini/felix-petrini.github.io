@@ -57,6 +57,12 @@ let score_x = 15;
 let score_y = 15;
 const button_img = new Image();
 button_img.src="./ClickerGame/button.png";
+class Mouse {
+    constructor(x, y) {
+        this.x=x;
+        this.y=y;
+    }
+}
 window.onload = function() {
     update2();
 }
@@ -79,10 +85,11 @@ function update2() {
     requestAnimationFrame(update2);
 }
 function canvas2click(event) {
-    let mouse_pos = (event.offsetX, event.offsetY);
-    console.log(mouse_pos);
+    let rect = canvas.getBoundingClientRect();
+    let mouse_x = event.clientX - rect.left;
+    let mouse_y = event.clientY - rect.top;
     if (!shop && !titlescreen) {
-        if (mouse_pos.x < (canvas2.width+178.8)/2 && mouse_pos.x > (canvas2.width-178.8)/2 && mouse_pos.y > (canvas2.height-178.8)/2 && mouse_pos.y < (canvas2.height+178.8)/2) {
+        if (mouse_x < (canvas2.width+178.8)/2 && mouse_x > (canvas2.width-178.8)/2 && mouse_y > (canvas2.height-178.8)/2 && mouse_y < (canvas2.height+178.8)/2) {
             if (!clicked) {
                 score = score + score_change;
             }
@@ -91,7 +98,7 @@ function canvas2click(event) {
             clicked = false;
         }
     } else if (titlescreen) {
-        if (mouse_pos.x > canvas2.width/2 - 50 && mouse_pos.x < canvas2.width/2 + 50 && mouse_pos.y > canvas2.height/2 + 50 && mouse_pos.y < canvas2.height/2 + 100) {
+        if (mouse_x > canvas2.width/2 - 50 && mouse_x < canvas2.width/2 + 50 && mouse_y > canvas2.height/2 + 50 && mouse_y < canvas2.height/2 + 100) {
             console.log("button");
             titlescreen=false;
         }
