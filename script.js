@@ -47,6 +47,7 @@ function update() {
 }
 const canvas2=document.getElementById("it6canvas");
 const ctx2=canvas2.getContext("2d");
+ctx2.font = "30px Arial";
 let titlescreen=true;
 let shop=false;
 let clicked=false;
@@ -57,7 +58,7 @@ let score_y = 15;
 const button_img = new Image();
 button_img.src="./ClickerGame/button.png";
 window.onload = function() {
-    update2()
+    update2();
 }
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
@@ -71,8 +72,11 @@ function update2() {
     } else if (titlescreen) {
         ctx2.fillText("Title", canvas2.width/2-50, canvas2.height/2-100);
         ctx2.fillRect(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
+    } else if (shop) {
+        ctx2.fillRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
+        ctx2.fillRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
     }
-    requestAnimationFrame(update2)
+    requestAnimationFrame(update2);
 }
 canvas2.addEventListener('click', function(event) {
     let mouse_pos = getMousePosition(canvas2, event)
@@ -85,9 +89,9 @@ canvas2.addEventListener('click', function(event) {
         } else {
             clicked = false;
         }
-    } else if (!shop && titlescreen) {
+    } else if (titlescreen) {
         if (mouse_pos.x > canvas2.width/2 - 50 && mouse_pos.x < canvas2.width/2 + 50 && mouse_pos.y > canvas2.height/2 + 50 && mouse_pos.y < canvas2.height/2 + 100) {
             titlescreen=false;
         }
     }
-})
+});
