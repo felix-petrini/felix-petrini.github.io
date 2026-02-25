@@ -72,10 +72,10 @@ class RectButton {
         let realX = canvas.width/2 + this.x;
         let realY = canvas.height/2 + this.y;
         if (
-            mousex < (canvas2.width+realX+this.width) &&
-            mousex > (canvas2.width+realX) &&
-            mousey < (canvas2.height+realY+this.height) &&
-            mousey > (canvas2.height+realY)
+            mousex < (realX+this.width) &&
+            mousex > (realX) &&
+            mousey < (realY+this.height) &&
+            mousey > (realY)
         ) {
             return true;
         } else {
