@@ -70,9 +70,9 @@ class RectButton {
     }
     isCollision(mousex, mousey) {
         if (
-            mousex < (canvas2.width+this.x+this.width),
-            mousex > (canvas2.width+this.x),
-            mousey < (canvas2.height+this.y+this.height),
+            mousex < (canvas2.width+this.x+this.width) &&
+            mousex > (canvas2.width+this.x) &&
+            mousey < (canvas2.height+this.y+this.height) &&
             mousey > (canvas2.height+this.y)
         ) {
             return true;
