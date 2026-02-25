@@ -64,7 +64,7 @@ function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
     if (!shop && !titlescreen) {
         ctx2.fillText(score.toString(), score_x + (30 * (score.length-1)), score_y);
-        console.log(score_x, (score_y + (15 * (score_y.length-1))))
+        console.log(score_x + (30 * (score.length-1)), score_y);
         ctx2.strokeRect(canvas2.width - 225, 75, 150, 50);
         ctx2.fillText("Shop", canvas2.width - 150, 175);
         if (clicked) {
@@ -89,8 +89,6 @@ function canvas2click(event) {
     const scaleY = canvas2.height / rect.height;
     let mouse_x = (event.clientX - rect.left) * scaleX;
     let mouse_y = (event.clientY - rect.top) * scaleY;
-    console.log(mouse_x);
-    console.log(mouse_y);
     if (!shop && !titlescreen) {
         if (mouse_x < (canvas2.width+178.8)/2 && mouse_x > (canvas2.width-178.8)/2 && mouse_y > (canvas2.height-178.8)/2 && mouse_y < (canvas2.height+178.8)/2) {
             if (!clicked) {
@@ -103,7 +101,6 @@ function canvas2click(event) {
         }
     } else if (titlescreen) {
         if (mouse_x > canvas2.width/2 - 50 && mouse_x < canvas2.width/2 + 50 && mouse_y > canvas2.height/2 + 50 && mouse_y < canvas2.height/2 + 100) {
-            console.log("button");
             titlescreen=false;
         }
     } else if (shop) {
