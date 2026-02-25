@@ -94,8 +94,6 @@ function canvas2click(event) {
                 score = score + score_change;
             }
             clicked = true;
-        } else {
-            clicked = false;
         }
         if (mouse_x < (canvas2.width-75) && mouse_x > (canvas2.width-225) && mouse_y < 125 && mouse_y > 75) {
             shop=true;
@@ -107,6 +105,11 @@ function canvas2click(event) {
         }
     }
 }
-canvas2.addEventListener('click', function(event) {
+canvas2.addEventListener('mousedown', function(event) {
     canvas2click(event);
+});
+canvas2.addEventListener('mouseup', function(event) {
+    if (mouse_x > (canvas2.width-178.8)/2 && mouse_x < (canvas2.width+178.8)/2 && mouse_y > (canvas2.height-178.8)/2 && mouse_y < (canvas2.height+178.8)/2) {
+        clicked=false;
+    }
 });
