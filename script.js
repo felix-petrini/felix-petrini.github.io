@@ -54,6 +54,7 @@ let clicked=false;
 let score = 0;
 let score_change = 1;
 let score_x = 45;
+let score_xchange = 0;
 let score_y = 45;
 const button_img = new Image();
 button_img.src="./ClickerGame/button.png";
@@ -61,10 +62,12 @@ window.onload = function() {
     update2();
 }
 function update2() {
-    ctx2.clearRect(0, 0, canvas2.width, canvas2.height)
+    score_xchange = (30 * (score.toString().length-1));
+    console.log("Scorexchange: ", score_xchange);
+    ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     if (!shop && !titlescreen) {
-        ctx2.fillText(score.toString(), score_x + (30 * (score.length-1)), score_y);
-        console.log(score_x + (30 * (score.length-1)), score_y);
+        ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
+        console.log(score_x + score_xchange, score_y);
         ctx2.strokeRect(canvas2.width - 225, 75, 150, 50);
         ctx2.fillText("Shop", canvas2.width - 150, 175);
         if (clicked) {
@@ -76,6 +79,7 @@ function update2() {
         ctx2.fillText("Title", canvas2.width/2-50, canvas2.height/2-100);
         ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
     } else if (shop) {
+        ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
         ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
         ctx2.strokeRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
         ctx2.strokeRect(canvas2.width - 225, 75, 150, 50);
