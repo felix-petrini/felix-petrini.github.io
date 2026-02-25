@@ -83,15 +83,15 @@ class RectButton {
         }
     }
 }
-shopbutton = new RectButton(135, 75, -190, 50);
+shopbutton = new RectButton(135, -190, 150, 50);
 clickbutton = new RectButton(-(178.8/2), -(178.8/2), 178.8, 178.8);
-shopbackbutton = new RectButton(135, 75, -190, 50);
+shopbackbutton = new RectButton(135, -190, 150, 50);
 startbutton = new RectButton(-50, 50, 100, 50);
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     if (!shop && !titlescreen) {
         ctx2.fillText(score.toString(), score_x + (15 * (score.toString().length-1)), score_y);
-        ctx2.strokeRect(canvas2.width/2 + 135, 75, canvas2.height/2 - 190, 50);
+        ctx2.strokeRect(canvas2.width/2 + 135, canvas2.height/2 - 190, 150, 50);
         ctx2.fillText("Shop", canvas2.width - 150, 75);
         if (clicked) {
             ctx2.drawImage(button_img, 0, 178.8, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
