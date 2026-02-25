@@ -79,7 +79,8 @@ function update2() {
     requestAnimationFrame(update2);
 }
 canvas2.addEventListener('click', function(event) {
-    let mouse_pos = getMousePosition(canvas2, event)
+    let mouse_pos = getMousePosition(canvas2, event);
+    console.log(mouse_pos);
     if (!shop && !titlescreen) {
         if (mouse_pos.x < (canvas2.width+178.8)/2 && mouse_pos.x > (canvas2.width-178.8)/2 && mouse_pos.y > (canvas2.height-178.8)/2 && mouse_pos.y < (canvas2.height+178.8)/2) {
             if (!clicked) {
@@ -91,6 +92,7 @@ canvas2.addEventListener('click', function(event) {
         }
     } else if (titlescreen) {
         if (mouse_pos.x > canvas2.width/2 - 50 && mouse_pos.x < canvas2.width/2 + 50 && mouse_pos.y > canvas2.height/2 + 50 && mouse_pos.y < canvas2.height/2 + 100) {
+            console.log("button");
             titlescreen=false;
         }
     }
