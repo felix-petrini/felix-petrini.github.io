@@ -62,7 +62,7 @@ ctx2.textAlign = "center";
 ctx2.textBaseline = "middle";
 window.onload = function() {
     update2();
-    console.log("V1.0.1");
+    console.log("V1.0.2");
 }
 class RectButton {
     constructor(x, y, width, height) {
@@ -90,6 +90,7 @@ let clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(17
 let startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+    spc_string = ("Score per click: " + score_change.toString());
     if (!shop && !titlescreen) {
         ctx2.fillText(score.toString(), score_x + (7.5 * (score.toString().length-1)), score_y);
         ctx2.strokeRect(shopbutton.x, shopbutton.y, shopbutton.width, shopbutton.height);
@@ -106,7 +107,6 @@ function update2() {
         ctx2.fillText("Start", startbutton.x + startbutton.width/2, startbutton.y + (startbutton.height/2));
     } else if (shop) {
         ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
-        spc_string = ("Score per click: " + score_change.toString());
         ctx2.fillText(spc_string, score_x + score_xchange + (15 * (spc_string.length-1)), score_y + 30);
         for (let i = 0; i < buybuttons.length; i++) {
             ctx2.strokeRect(buybuttons[i].x, buybuttons[i].y, buybuttons[i].width, buybuttons[i].height);
