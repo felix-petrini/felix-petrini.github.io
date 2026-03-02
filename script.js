@@ -1,3 +1,5 @@
+const { startTransition } = require("react");
+
 const canvas = document.getElementById("it4button");
 const ctx = canvas.getContext("2d");
 class confetti_object {
@@ -81,15 +83,15 @@ class RectButton {
         }
     }
 }
-shopbutton = new RectButton(canvas2.width/2+250, canvas2.height/2-295, 150, 50);
+shopbutton = new RectButton(canvas2.width/2+150, canvas2.height/2-265, 150, 50);
 clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
-shopbackbutton = new RectButton(canvas2.width/2+250, canvas2.height/2-295, 150, 50);
+shopbackbutton = new RectButton(canvas2.width/2+150, canvas2.height/2-265, 150, 50);
 startbutton = new RectButton(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     if (!shop && !titlescreen) {
         ctx2.fillText(score.toString(), score_x + (15 * (score.toString().length-1)), score_y);
-        ctx2.strokeRect(canvas2.width/2 + 250, canvas2.height/2 - 265, 150, 50);
+        ctx2.strokeRect(shopbutton.x, shopbutton.y, shopbutton.width, shopbutton.height);
         ctx2.fillText("Shop", canvas2.width - 150, 75);
         if (clicked) {
             ctx2.drawImage(button_img, 0, 178.8, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
@@ -98,12 +100,12 @@ function update2() {
         }
     } else if (titlescreen) {
         ctx2.fillText("Title", canvas2.width/2-50, canvas2.height/2-100);
-        ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
+        ctx2.strokeRect(startbutton.x, startbutton.y, startbutton.width, startbutton.height);
     } else if (shop) {
         ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
         ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
         ctx2.strokeRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
-        ctx2.strokeRect(canvas2.width/2+250, canvas2.height/2-295, 150, 50);
+        ctx2.strokeRect(shopbackbutton.x, shopbackbutton.y, shopbackbutton.width, shopbackbutton.height);
         ctx2.fillText("Back", canvas2.width - 150, 175);
     }
     requestAnimationFrame(update2);
