@@ -62,6 +62,7 @@ ctx2.textAlign = "center";
 ctx2.textBaseline = "middle";
 window.onload = function() {
     update2();
+    console.log("V1.0.1");
 }
 class RectButton {
     constructor(x, y, width, height) {
@@ -87,7 +88,6 @@ buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2-200, ((bu
 let shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
 let clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
 let startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
-console.log("Version 1");
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     if (!shop && !titlescreen) {
