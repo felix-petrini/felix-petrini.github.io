@@ -75,9 +75,9 @@ class RectButton {
            mousey >= this.y && mousey <= this.y + this.height);
     }
 }
-shopbutton = new RectButton(canvas2.width/2, canvas2.height/2-345, 150, 50);
+shopbutton = new RectButton(360, 20, 150, 50);
 clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
-startbutton = new RectButton(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
+startbutton = new RectButton(canvas2.width/2-75, canvas2.height/2+50, 150, 75);
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     if (!shop && !titlescreen) {
@@ -90,7 +90,7 @@ function update2() {
             ctx2.drawImage(button_img, 0, 0, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
         }
     } else if (titlescreen) {
-        ctx2.fillText("Title", canvas2.width/2-50, canvas2.height/2-100);
+        ctx2.fillText("Clicker Game", canvas2.width/2, canvas2.height/2-100);
         ctx2.strokeRect(startbutton.x, startbutton.y, startbutton.width, startbutton.height);
         ctx2.fillText("Start", startbutton.x + startbutton.width/2, startbutton.y + (startbutton.height/2));
     } else if (shop) {
