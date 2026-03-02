@@ -85,7 +85,6 @@ class RectButton {
 }
 shopbutton = new RectButton(canvas2.width/2+150, canvas2.height/2-265, 150, 50);
 clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
-shopbackbutton = new RectButton(canvas2.width/2+150, canvas2.height/2-265, 150, 50);
 startbutton = new RectButton(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
@@ -105,8 +104,8 @@ function update2() {
         ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
         ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
         ctx2.strokeRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
-        ctx2.strokeRect(shopbackbutton.x, shopbackbutton.y, shopbackbutton.width, shopbackbutton.height);
-        ctx2.fillText("Back", shopbackbutton.x - shopbutton.width/2, shopbackbutton.y - shopbackbutton.height/2);
+        ctx2.strokeRect(shopbutton.x, shopbutton.y, shopbutton.width, shopbutton.height);
+        ctx2.fillText("Back", shopbutton.x - shopbutton.width/2, shopbutton.y - shopbutton.height/2);
     }
     requestAnimationFrame(update2);
 }
