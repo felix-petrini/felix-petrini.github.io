@@ -75,9 +75,17 @@ class RectButton {
            mousey >= this.y && mousey <= this.y + this.height);
     }
 }
-shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
-clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
-startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
+let buybutton_texts = [];
+buybutton_texts.push("Cost: 50 Score Change: 1");
+let buybuttons = [];
+let bb_costs = [];
+bb_costs.push(50);
+let bb_score_changes = [];
+bb_score_changes.push(1);
+buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2-200, 150, 75));
+let shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
+let clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
+let startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
 function update2() {
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     if (!shop && !titlescreen) {
@@ -95,8 +103,11 @@ function update2() {
         ctx2.fillText("Start", startbutton.x + startbutton.width/2, startbutton.y + (startbutton.height/2));
     } else if (shop) {
         ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
-        ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
-        ctx2.strokeRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
+        ctx2.fillText("Score per click: " + score_change.toString(), score_x + score_xchange, score_y + 30);
+        for (let i = 0; i < buybuttons.length; i++) {
+            ctx2.strokeRect(buybuttons[i].x, buybuttons[i].y, buybuttons[i].width, buybuttons[i].height);
+            ctx2.fillText(buybutton_texts[i], buybuttons[i].x + (buybuttons[i].width/2), buybuttons[i].y + (buybuttons[i].height/2));
+        }
         ctx2.strokeRect(shopbutton.x, shopbutton.y, shopbutton.width, shopbutton.height);
         ctx2.fillText("Back", shopbutton.x + (shopbutton.width/2), shopbutton.y + (shopbutton.height/2));
     }
@@ -126,6 +137,14 @@ function canvas2click(event) {
     } else if (shop) {
         if (shopbutton.isCollision(mouse_x, mouse_y)) {
             shop=false;
+        }
+        for (let i = 0; i < buybuttons.length; i++) {
+            if (buybuttons[i].isCollision(mouse_x, mouse_y)) {
+                if (score >= bb_costs[i]) {
+                    score = score - bb_costs[i];
+                    score_change = score_change + bb_score_changes[i];
+                }
+            }
         }
     }
 }
