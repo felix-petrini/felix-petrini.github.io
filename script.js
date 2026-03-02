@@ -1,5 +1,3 @@
-const { startTransition } = require("react");
-
 const canvas = document.getElementById("it4button");
 const ctx = canvas.getContext("2d");
 class confetti_object {
@@ -71,16 +69,8 @@ class RectButton {
         this.height=height;
     }
     isCollision(mousex, mousey) {
-        if (
-            mousex < (this.x+this.width) &&
-            mousex > (this.x) &&
-            mousey < (this.y+this.height) &&
-            mousey > (this.y)
-        ) {
-            return true;
-        } else {
-            return false;
-        }
+        return mousex >= this.x && mousex <= this.x + this.width &&
+           mousey >= this.y && mousey <= this.y + this.height;
     }
 }
 shopbutton = new RectButton(canvas2.width/2+150, canvas2.height/2-265, 150, 50);
