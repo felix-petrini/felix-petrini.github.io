@@ -75,7 +75,7 @@ class RectButton {
            mousey >= this.y && mousey <= this.y + this.height);
     }
 }
-shopbutton = new RectButton(canvas2.width/2+150, canvas2.height/2-265, 150, 50);
+shopbutton = new RectButton(canvas2.width/2+250, canvas2.height/2-375, 150, 50);
 clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
 startbutton = new RectButton(canvas2.width/2-50, canvas2.height/2+50, 100, 50);
 function update2() {
