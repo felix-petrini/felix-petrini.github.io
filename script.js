@@ -92,7 +92,7 @@ function update2() {
     if (!shop && !titlescreen) {
         ctx2.fillText(score.toString(), score_x + (15 * (score.toString().length-1)), score_y);
         ctx2.strokeRect(shopbutton.x, shopbutton.y, shopbutton.width, shopbutton.height);
-        ctx2.fillText("Shop", canvas2.width - 150, 75);
+        ctx2.fillText("Shop", (shopbutton.x - shopbutton.width/2), (shopbutton.y - shopbutton.height/2));
         if (clicked) {
             ctx2.drawImage(button_img, 0, 178.8, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
         } else {
@@ -106,7 +106,7 @@ function update2() {
         ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
         ctx2.strokeRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
         ctx2.strokeRect(shopbackbutton.x, shopbackbutton.y, shopbackbutton.width, shopbackbutton.height);
-        ctx2.fillText("Back", canvas2.width - 150, 175);
+        ctx2.fillText("Back", shopbackbutton.x - shopbutton.width/2, shopbackbutton.y - shopbackbutton.height/2);
     }
     requestAnimationFrame(update2);
 }
