@@ -58,6 +58,8 @@ let score_xchange = 0;
 let score_y = 45;
 const button_img = new Image();
 button_img.src="./ClickerGame/button.png";
+ctx2.textAlign = "center";
+ctx2.textBaseline = "middle";
 window.onload = function() {
     update2();
 }
@@ -90,13 +92,13 @@ function update2() {
     } else if (titlescreen) {
         ctx2.fillText("Title", canvas2.width/2-50, canvas2.height/2-100);
         ctx2.strokeRect(startbutton.x, startbutton.y, startbutton.width, startbutton.height);
-        ctx2.fillText("Start", startbutton.x + startbutton.width/2, startbutton.y - (startbutton.height/2));
+        ctx2.fillText("Start", startbutton.x + startbutton.width/2, startbutton.y + (startbutton.height/2));
     } else if (shop) {
         ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
         ctx2.strokeRect(canvas2.width/2-50, canvas2.height/2-50, 100, 50);
         ctx2.strokeRect(canvas2.width/2+50, canvas2.height/2-50, 100, 50);
         ctx2.strokeRect(shopbutton.x, shopbutton.y, shopbutton.width, shopbutton.height);
-        ctx2.fillText("Back", shopbutton.x + (shopbutton.width/2), shopbutton.y - (shopbutton.height/2));
+        ctx2.fillText("Back", shopbutton.x + (shopbutton.width/2), shopbutton.y + (shopbutton.height/2));
     }
     requestAnimationFrame(update2);
 }
