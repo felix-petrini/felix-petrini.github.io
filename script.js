@@ -131,7 +131,7 @@ function canvas2click(event) {
             titlescreen=false;
         }
     } else if (shop) {
-        if (shopbackbutton.isCollision(mouse_x, mouse_y)) {
+        if (shopbutton.isCollision(mouse_x, mouse_y)) {
             shop=false;
         }
     }
