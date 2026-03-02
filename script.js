@@ -82,7 +82,7 @@ let bb_costs = [];
 bb_costs.push(50);
 let bb_score_changes = [];
 bb_score_changes.push(1);
-buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2-200, 150, 75));
+buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2-200, (buybutton_texts[0].length * 15)+20, 75));
 let shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
 let clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
 let startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
