@@ -81,14 +81,14 @@ class RectButton {
 let buybutton_texts = [];
 let spc_string = "";
 buybutton_texts.push("Cost: 50 SC: 1");
-buybutton_texts.push("Cost: 1k SC: 5");
+buybutton_texts.push("Cost: 1k SC: 25");
 let buybuttons = [];
 let bb_costs = [];
 bb_costs.push(50);
 bb_costs.push(1000);
 let bb_score_changes = [];
 bb_score_changes.push(1);
-bb_score_changes.push(5);
+bb_score_changes.push(25);
 buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2-200, ((buybutton_texts[0].length-1) * 15)+20, 75));
 buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2-200, ((buybutton_texts[1].length-1) * 15)+20, 75));
 let shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
