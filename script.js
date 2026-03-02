@@ -56,6 +56,8 @@ let score_change = 1;
 let score_x = 45;
 let score_xchange = 0;
 let score_y = 45;
+let score_ychange = 0;
+let spc_xchange = 0;
 const button_img = new Image();
 button_img.src="./ClickerGame/button.png";
 ctx2.textAlign = "center";
@@ -93,10 +95,12 @@ let shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
 let clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
 let startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
 function update2() {
+    score_xchange = 7.5 * (score.toString().length-1);
+    spc_xchange = 7.5 * (spc_string.length-1);
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     spc_string = ("Score per click: " + score_change.toString());
     if (!shop && !titlescreen) {
-        ctx2.fillText(score.toString(), score_x + (15 * (score.toString().length-1)), score_y);
+        ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
         ctx2.strokeRect(shopbutton.x, shopbutton.y, shopbutton.width, shopbutton.height);
         ctx2.fillText("Shop", (shopbutton.x + (shopbutton.width/2)), (shopbutton.y + (shopbutton.height/2)));
         if (clicked) {
@@ -104,14 +108,14 @@ function update2() {
         } else {
             ctx2.drawImage(button_img, 0, 0, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
         }
-        ctx2.fillText(spc_string, score_x + (15 * (spc_string.length-1)), score_y + 30);
+        ctx2.fillText(spc_string, score_x + spc_xchange, score_y + 30);
     } else if (titlescreen) {
         ctx2.fillText("Clicker Game", canvas2.width/2, canvas2.height/2-100);
         ctx2.strokeRect(startbutton.x, startbutton.y, startbutton.width, startbutton.height);
         ctx2.fillText("Start", startbutton.x + startbutton.width/2, startbutton.y + (startbutton.height/2));
     } else if (shop) {
         ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
-        ctx2.fillText(spc_string, score_x + score_xchange + (15 * (spc_string.length-1)), score_y + 30);
+        ctx2.fillText(spc_string, score_x + spc_xchange, score_y + 30);
         for (let i = 0; i < buybuttons.length; i++) {
             ctx2.strokeRect(buybuttons[i].x, buybuttons[i].y, buybuttons[i].width, buybuttons[i].height);
             ctx2.fillText(buybutton_texts[i], buybuttons[i].x + (buybuttons[i].width/2), buybuttons[i].y + (buybuttons[i].height/2));
