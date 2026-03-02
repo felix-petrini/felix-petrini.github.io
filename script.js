@@ -69,8 +69,8 @@ class RectButton {
         this.height=height;
     }
     isCollision(mousex, mousey) {
-        return mousex >= this.x && mousex <= this.x + this.width &&
-           mousey >= this.y && mousey <= this.y + this.height;
+        return (mousex >= this.x && mousex <= this.x + this.width &&
+           mousey >= this.y && mousey <= this.y + this.height);
     }
 }
 shopbutton = new RectButton(canvas2.width/2+150, canvas2.height/2-265, 150, 50);
@@ -131,8 +131,8 @@ canvas2.addEventListener('mousedown', function(event) {
 });
 canvas2.addEventListener('mouseup', function(event) {
     let rect = canvas2.getBoundingClientRect();
-    const scaleX2 = canvas2.width / rect.width;
-    const scaleY2 = canvas2.height / rect.height;
+    let scaleX2 = canvas2.width / rect.width;
+    let scaleY2 = canvas2.height / rect.height;
     let mouse_x2 = (event.clientX - rect.left) * scaleX2;
     let mouse_y2 = (event.clientY - rect.top) * scaleY2;
     if (clickbutton.isCollision(mouse_x2, mouse_y2)) {
