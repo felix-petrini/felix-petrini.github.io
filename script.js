@@ -76,13 +76,14 @@ class RectButton {
     }
 }
 let buybutton_texts = [];
+let spc_string = "";
 buybutton_texts.push("Cost: 50 Score Change: 1");
 let buybuttons = [];
 let bb_costs = [];
 bb_costs.push(50);
 let bb_score_changes = [];
 bb_score_changes.push(1);
-buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2-200, (buybutton_texts[0].length * 15)+20, 75));
+buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2-200, ((buybutton_texts[0].length-1) * 30)+20, 75));
 let shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
 let clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
 let startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
@@ -97,13 +98,15 @@ function update2() {
         } else {
             ctx2.drawImage(button_img, 0, 0, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
         }
+        ctx2.fillText(spc_string, score_x + (30 * (spc_string.length-1)), score_y + 30);
     } else if (titlescreen) {
         ctx2.fillText("Clicker Game", canvas2.width/2, canvas2.height/2-100);
         ctx2.strokeRect(startbutton.x, startbutton.y, startbutton.width, startbutton.height);
         ctx2.fillText("Start", startbutton.x + startbutton.width/2, startbutton.y + (startbutton.height/2));
     } else if (shop) {
         ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
-        ctx2.fillText("Score per click: " + score_change.toString(), score_x + score_xchange, score_y + 30);
+        spc_string = ("Score per click: " + score_change.toString());
+        ctx2.fillText(spc_string, score_x + score_xchange + (30 * (spc_string.length-1)), score_y + 30);
         for (let i = 0; i < buybuttons.length; i++) {
             ctx2.strokeRect(buybuttons[i].x, buybuttons[i].y, buybuttons[i].width, buybuttons[i].height);
             ctx2.fillText(buybutton_texts[i], buybuttons[i].x + (buybuttons[i].width/2), buybuttons[i].y + (buybuttons[i].height/2));
