@@ -64,7 +64,7 @@ ctx2.textAlign = "center";
 ctx2.textBaseline = "middle";
 window.onload = function() {
     update2();
-    console.log("V1.0.3");
+    console.log("Loaded Version 1.0");
 }
 class RectButton {
     constructor(x, y, width, height) {
@@ -114,11 +114,10 @@ buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2-100, ((bu
 buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2, ((buybutton_texts[4].length-1) * 15)+20, 75));
 buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2, ((buybutton_texts[5].length-1)*15)+20, 75));
 buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2+100, ((buybutton_texts[6].length-1) * 15)+20, 75));
-buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2+100, ((buybutton_texts[7].length-1) * 15)+20, 75));
+buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2+100, ((buybutton_texts[7].length-1) * 15)+40, 75));
 let shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
 let clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
 let startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
-console.log("Loaded Version 1.0");
 function update2() {
     score_xchange = 7.5 * (("Score" + score.toString()).length-1);
     spc_xchange = 7.5 * (spc_string.length-1);
