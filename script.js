@@ -118,6 +118,7 @@ buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2+100, ((bu
 let shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
 let clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
 let startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
+console.log("Loaded Version 1.0");
 function update2() {
     score_xchange = 7.5 * (("Score" + score.toString()).length-1);
     spc_xchange = 7.5 * (spc_string.length-1);
