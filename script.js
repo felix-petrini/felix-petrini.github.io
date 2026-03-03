@@ -82,33 +82,49 @@ let buybutton_texts = [];
 let spc_string = "";
 buybutton_texts.push("Cost: 50 SC: 1");
 buybutton_texts.push("Cost: 1k SC: 25");
-buybutton_texts.push("Cost: 10k SC: 250");
+buybutton_texts.push("Cost: 2.5k SC: 100");
+buybutton_texts.push("Cost: 10k SC: 1000");
 buybutton_texts.push("Cost: 100k SC: 2500");
+buybutton_texts.push("Cost: 250k SC: 10k");
+buybutton_texts.push("Cost: 1M SC: 25k");
+buybutton_texts.push("Cost: 100M SC: 1M");
 let buybuttons = [];
 let bb_costs = [];
 bb_costs.push(50);
 bb_costs.push(1000);
+bb_costs.push(2500);
 bb_costs.push(10000);
 bb_costs.push(100000);
+bb_costs.push(250000);
+bb_costs.push(1000000);
+bb_costs.push(100000000);
 let bb_score_changes = [];
 bb_score_changes.push(1);
 bb_score_changes.push(25);
-bb_score_changes.push(250);
+bb_score_changes.push(100);
+bb_score_changes.push(1000);
 bb_score_changes.push(2500);
+bb_score_changes.push(10000);
+bb_score_changes.push(25000);
+bb_score_changes.push(1000000);
 buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2-200, ((buybutton_texts[0].length-1) * 15)+20, 75));
 buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2-200, ((buybutton_texts[1].length-1) * 15)+20, 75));
 buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2-100, ((buybutton_texts[2].length-1) * 15)+20, 75));
 buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2-100, ((buybutton_texts[3].length-1) * 15)+20, 75));
+buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2, ((buybutton_texts[4].length-1) * 15)+20, 75));
+buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2, ((buybutton_texts[5].length-1)*15)+20, 75));
+buybuttons.push(new RectButton((canvas2.width/2)-500, canvas2.height/2+100, ((buybutton_texts[6].length-1) * 15)+20, 75));
+buybuttons.push(new RectButton((canvas2.width/2)+175, canvas2.height/2+100, ((buybutton_texts[7].length-1) * 15)+20, 75));
 let shopbutton = new RectButton((canvas2.width/2)-75, 20, 150, 50);
 let clickbutton = new RectButton(canvas2.width/2-(178.8/2), canvas2.height/2-(178.8/2), 178.8, 178.8);
 let startbutton = new RectButton((canvas2.width/2)-75, canvas2.height/2+50, 150, 75);
 function update2() {
-    score_xchange = 7.5 * (score.toString().length-1);
+    score_xchange = 7.5 * (("Score" + score.toString()).length-1);
     spc_xchange = 7.5 * (spc_string.length-1);
     ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     spc_string = ("Score per click: " + score_change.toString());
     if (!shop && !titlescreen) {
-        ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
+        ctx2.fillText("Score: "+score.toString(), score_x + score_xchange, score_y);
         ctx2.strokeRect(shopbutton.x, shopbutton.y, shopbutton.width, shopbutton.height);
         ctx2.fillText("Shop", (shopbutton.x + (shopbutton.width/2)), (shopbutton.y + (shopbutton.height/2)));
         if (clicked) {
@@ -122,7 +138,7 @@ function update2() {
         ctx2.strokeRect(startbutton.x, startbutton.y, startbutton.width, startbutton.height);
         ctx2.fillText("Start", startbutton.x + startbutton.width/2, startbutton.y + (startbutton.height/2));
     } else if (shop) {
-        ctx2.fillText(score.toString(), score_x + score_xchange, score_y);
+        ctx2.fillText("Score: "+score.toString(), score_x + score_xchange, score_y);
         ctx2.fillText(spc_string, (score_x - 30) + spc_xchange, score_y + 50);
         for (let i = 0; i < buybuttons.length; i++) {
             ctx2.strokeRect(buybuttons[i].x, buybuttons[i].y, buybuttons[i].width, buybuttons[i].height);
