@@ -35,19 +35,28 @@
         }
     }
 }
+.iteration6 {
+    h2 {
+        background-color: cornflowerblue;
+    }
+    p {
+        background-color: cornflowerblue;
+    }
+}
 h1 {
     font-size: 50px;
 }
 h2 {
-    font-size: 30px;
+    font-size: 40px;
 }
 h3 {
-    font-size: 20px;
+    font-size: 35px;
 }
 p {
-    font-size: 15px;
+    font-size: 20px;
 }
 canvas {
+    background-color: white;
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
