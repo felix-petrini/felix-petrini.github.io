@@ -132,14 +132,14 @@ function update2() {
         } else {
             ctx2.drawImage(button_img, 0, 0, 178.8, 178.8, (canvas2.width-178.8)/2, (canvas2.height-178.8)/2, 178.8, 178.8);
         }
-        ctx2.fillText(spc_string, score_x + spc_xchange, score_y + 30);
+        ctx2.fillText(spc_string, (score_x-30) + spc_xchange, score_y + 50);
     } else if (titlescreen) {
         ctx2.fillText("Clicker Game", canvas2.width/2, canvas2.height/2-100);
         ctx2.strokeRect(startbutton.x, startbutton.y, startbutton.width, startbutton.height);
         ctx2.fillText("Start", startbutton.x + startbutton.width/2, startbutton.y + (startbutton.height/2));
     } else if (shop) {
         ctx2.fillText("Score: "+score.toString(), score_x + score_xchange, score_y);
-        ctx2.fillText(spc_string, (score_x - 30) + spc_xchange, score_y + 50);
+        ctx2.fillText(spc_string, (score_x-30) + spc_xchange, score_y + 50);
         for (let i = 0; i < buybuttons.length; i++) {
             ctx2.strokeRect(buybuttons[i].x, buybuttons[i].y, buybuttons[i].width, buybuttons[i].height);
             ctx2.fillText(buybutton_texts[i], buybuttons[i].x + (buybuttons[i].width/2), buybuttons[i].y + (buybuttons[i].height/2));
